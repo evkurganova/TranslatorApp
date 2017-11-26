@@ -6,13 +6,13 @@
 //  Copyright © 2017 Ekaterina Systerova. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "ESMainViewController.h"
 
-@interface ViewController ()
+@interface ESMainViewController ()
 
 @end
 
-@implementation ViewController
+@implementation ESMainViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
