@@ -10,6 +10,10 @@
 
 @interface ESMainViewController ()
 
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet UITextField *textField;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 @end
 
 @implementation ESMainViewController
@@ -25,5 +29,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)translate:(id)sender {
+    
+}
+
+- (IBAction)showList:(id)sender {
+    
+}
 
 @end
