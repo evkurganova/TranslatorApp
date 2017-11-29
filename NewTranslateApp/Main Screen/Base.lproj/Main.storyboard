@@ -115,6 +115,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="pickerBarButton" destination="Cud-KV-3N9" id="Ldu-wM-pIy"/>
                         <outlet property="searchBar" destination="tfg-EH-zDB" id="1E9-q3-Lzc"/>
                         <outlet property="tableView" destination="Ms6-h6-ajM" id="iUU-f3-cNP"/>
                         <outlet property="textField" destination="mar-Go-bxS" id="i9S-LF-fLq"/>

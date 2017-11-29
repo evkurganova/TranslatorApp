@@ -16,11 +16,12 @@
 		99B2549D1FCAF3E40036879A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99B2549B1FCAF3E40036879A /* LaunchScreen.storyboard */; };
 		99B254A01FCAF3E40036879A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 99B2549F1FCAF3E40036879A /* main.m */; };
 		99B254AA1FCCB5890036879A /* ESTranslationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 99B254A91FCCB5890036879A /* ESTranslationManager.m */; };
-		99B254B31FCCB5B20036879A /* Language+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 99B254AD1FCCB5B20036879A /* Language+CoreDataClass.m */; };
-		99B254B41FCCB5B20036879A /* Language+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 99B254AE1FCCB5B20036879A /* Language+CoreDataProperties.m */; };
-		99B254B51FCCB5B20036879A /* Word+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 99B254B11FCCB5B20036879A /* Word+CoreDataClass.m */; };
-		99B254B61FCCB5B20036879A /* Word+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 99B254B21FCCB5B20036879A /* Word+CoreDataProperties.m */; };
-		99B254BA1FCCBAD00036879A /* ESAppSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 99B254B91FCCBAD00036879A /* ESAppSettings.m */; };
+		99B254C41FCF1B110036879A /* Language.m in Sources */ = {isa = PBXBuildFile; fileRef = 99B254BE1FCF1B110036879A /* Language.m */; };
+		99B254C61FCF1B110036879A /* Word.m in Sources */ = {isa = PBXBuildFile; fileRef = 99B254C21FCF1B110036879A /* Word.m */; };
+		99B254C91FCF200B0036879A /* LanguagesPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99B254C81FCF200B0036879A /* LanguagesPicker.storyboard */; };
+		99B254CC1FCF20270036879A /* ESLanguagesPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99B254CB1FCF20270036879A /* ESLanguagesPickerViewController.m */; };
+		99B254D01FCF22550036879A /* ESRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 99B254CF1FCF22550036879A /* ESRouter.m */; };
+		99B254D31FCF360E0036879A /* ESDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 99B254D21FCF360E0036879A /* ESDataManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,16 +40,17 @@
 		99B2549F1FCAF3E40036879A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		99B254A81FCCB5890036879A /* ESTranslationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESTranslationManager.h; sourceTree = "<group>"; };
 		99B254A91FCCB5890036879A /* ESTranslationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ESTranslationManager.m; sourceTree = "<group>"; };
-		99B254AB1FCCB5B20036879A /* Language+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Language+CoreDataProperties.h"; sourceTree = "<group>"; };
-		99B254AC1FCCB5B20036879A /* Language+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Language+CoreDataClass.h"; sourceTree = "<group>"; };
-		99B254AD1FCCB5B20036879A /* Language+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Language+CoreDataClass.m"; sourceTree = "<group>"; };
-		99B254AE1FCCB5B20036879A /* Language+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Language+CoreDataProperties.m"; sourceTree = "<group>"; };
-		99B254AF1FCCB5B20036879A /* Word+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Word+CoreDataProperties.h"; sourceTree = "<group>"; };
-		99B254B01FCCB5B20036879A /* Word+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Word+CoreDataClass.h"; sourceTree = "<group>"; };
-		99B254B11FCCB5B20036879A /* Word+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Word+CoreDataClass.m"; sourceTree = "<group>"; };
-		99B254B21FCCB5B20036879A /* Word+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Word+CoreDataProperties.m"; sourceTree = "<group>"; };
-		99B254B81FCCBAD00036879A /* ESAppSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESAppSettings.h; sourceTree = "<group>"; };
-		99B254B91FCCBAD00036879A /* ESAppSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESAppSettings.m; sourceTree = "<group>"; };
+		99B254BB1FCF1B110036879A /* Language.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Language.h; sourceTree = "<group>"; };
+		99B254BE1FCF1B110036879A /* Language.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Language.m; sourceTree = "<group>"; };
+		99B254BF1FCF1B110036879A /* Word.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Word.h; sourceTree = "<group>"; };
+		99B254C21FCF1B110036879A /* Word.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Word.m; sourceTree = "<group>"; };
+		99B254C81FCF200B0036879A /* LanguagesPicker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LanguagesPicker.storyboard; sourceTree = "<group>"; };
+		99B254CA1FCF20270036879A /* ESLanguagesPickerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESLanguagesPickerViewController.h; sourceTree = "<group>"; };
+		99B254CB1FCF20270036879A /* ESLanguagesPickerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ESLanguagesPickerViewController.m; sourceTree = "<group>"; };
+		99B254CE1FCF22550036879A /* ESRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESRouter.h; sourceTree = "<group>"; };
+		99B254CF1FCF22550036879A /* ESRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ESRouter.m; sourceTree = "<group>"; };
+		99B254D11FCF360E0036879A /* ESDataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESDataManager.h; sourceTree = "<group>"; };
+		99B254D21FCF360E0036879A /* ESDataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ESDataManager.m; sourceTree = "<group>"; };
 		9D7832CFA383CEFCDFFE1D1C /* Pods-NewTranslateApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewTranslateApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NewTranslateApp/Pods-NewTranslateApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,10 +89,8 @@
 			children = (
 				99B2548D1FCAF3E40036879A /* ESAppDelegate.h */,
 				99B2548E1FCAF3E40036879A /* ESAppDelegate.m */,
-				99B254A81FCCB5890036879A /* ESTranslationManager.h */,
-				99B254A91FCCB5890036879A /* ESTranslationManager.m */,
-				99B254B81FCCBAD00036879A /* ESAppSettings.h */,
-				99B254B91FCCBAD00036879A /* ESAppSettings.m */,
+				99B254CD1FCF222A0036879A /* Common Logic */,
+				99B254C71FCF1FCC0036879A /* Languages Screen */,
 				99B254A71FCAF4BE0036879A /* Main Screen */,
 				99B254B71FCCB5E40036879A /* Model */,
 				99B254A61FCAF4140036879A /* Supporting Files */,
@@ -122,17 +122,36 @@
 		99B254B71FCCB5E40036879A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				99B254BB1FCF1B110036879A /* Language.h */,
+				99B254BE1FCF1B110036879A /* Language.m */,
+				99B254BF1FCF1B110036879A /* Word.h */,
+				99B254C21FCF1B110036879A /* Word.m */,
 				99B254961FCAF3E40036879A /* NewTranslateApp.xcdatamodeld */,
-				99B254AC1FCCB5B20036879A /* Language+CoreDataClass.h */,
-				99B254AD1FCCB5B20036879A /* Language+CoreDataClass.m */,
-				99B254AB1FCCB5B20036879A /* Language+CoreDataProperties.h */,
-				99B254AE1FCCB5B20036879A /* Language+CoreDataProperties.m */,
-				99B254B01FCCB5B20036879A /* Word+CoreDataClass.h */,
-				99B254B11FCCB5B20036879A /* Word+CoreDataClass.m */,
-				99B254AF1FCCB5B20036879A /* Word+CoreDataProperties.h */,
-				99B254B21FCCB5B20036879A /* Word+CoreDataProperties.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		99B254C71FCF1FCC0036879A /* Languages Screen */ = {
+			isa = PBXGroup;
+			children = (
+				99B254CA1FCF20270036879A /* ESLanguagesPickerViewController.h */,
+				99B254CB1FCF20270036879A /* ESLanguagesPickerViewController.m */,
+				99B254C81FCF200B0036879A /* LanguagesPicker.storyboard */,
+			);
+			path = "Languages Screen";
+			sourceTree = "<group>";
+		};
+		99B254CD1FCF222A0036879A /* Common Logic */ = {
+			isa = PBXGroup;
+			children = (
+				99B254CE1FCF22550036879A /* ESRouter.h */,
+				99B254CF1FCF22550036879A /* ESRouter.m */,
+				99B254A81FCCB5890036879A /* ESTranslationManager.h */,
+				99B254A91FCCB5890036879A /* ESTranslationManager.m */,
+				99B254D11FCF360E0036879A /* ESDataManager.h */,
+				99B254D21FCF360E0036879A /* ESDataManager.m */,
+			);
+			path = "Common Logic";
 			sourceTree = "<group>";
 		};
 		AF0003D5963682BED8B75EA0 /* Pods */ = {
@@ -216,6 +235,7 @@
 			files = (
 				99B2549D1FCAF3E40036879A /* LaunchScreen.storyboard in Resources */,
 				99B2549A1FCAF3E40036879A /* Assets.xcassets in Resources */,
+				99B254C91FCF200B0036879A /* LanguagesPicker.storyboard in Resources */,
 				99B254951FCAF3E40036879A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,14 +300,14 @@
 			files = (
 				99B254981FCAF3E40036879A /* NewTranslateApp.xcdatamodeld in Sources */,
 				99B254AA1FCCB5890036879A /* ESTranslationManager.m in Sources */,
+				99B254D01FCF22550036879A /* ESRouter.m in Sources */,
 				99B254921FCAF3E40036879A /* ESMainViewController.m in Sources */,
-				99B254B41FCCB5B20036879A /* Language+CoreDataProperties.m in Sources */,
 				99B254A01FCAF3E40036879A /* main.m in Sources */,
-				99B254BA1FCCBAD00036879A /* ESAppSettings.m in Sources */,
-				99B254B61FCCB5B20036879A /* Word+CoreDataProperties.m in Sources */,
+				99B254C61FCF1B110036879A /* Word.m in Sources */,
 				99B2548F1FCAF3E40036879A /* ESAppDelegate.m in Sources */,
-				99B254B31FCCB5B20036879A /* Language+CoreDataClass.m in Sources */,
-				99B254B51FCCB5B20036879A /* Word+CoreDataClass.m in Sources */,
+				99B254CC1FCF20270036879A /* ESLanguagesPickerViewController.m in Sources */,
+				99B254C41FCF1B110036879A /* Language.m in Sources */,
+				99B254D31FCF360E0036879A /* ESDataManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

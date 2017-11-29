@@ -15,8 +15,8 @@
 
 + (ESTranslationManager *)shared;
 
-+ (void)translationForWord:(NSString *)nativeWord completion:(void(^)(BOOL success, NSError *error, Word *word))completion;
++ (void)translationForWord:(NSString *)nativeWord language:(NSString *)language completion:(void(^)(BOOL success, NSError *error))completion;
 
-+ (void)languages:(void(^)(BOOL success, NSError *error, NSArray<Language *> *languages))completion;
++ (void)languages:(void(^)(BOOL success, NSError *error))completion;
 
 @end

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Hee-Fb-tjq">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Languages-->
+        <scene sceneID="Pbw-6v-2of">
+            <objects>
+                <viewController storyboardIdentifier="ESLanguagesPickerViewController" title="Languages" id="Hee-Fb-tjq" customClass="ESLanguagesPickerViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="q4U-St-a93">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ffx-WA-JOa">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ffx-WA-JOa" firstAttribute="trailing" secondItem="UCe-BS-OkA" secondAttribute="trailing" id="9hC-BI-Yu9"/>
+                            <constraint firstItem="Ffx-WA-JOa" firstAttribute="bottom" secondItem="UCe-BS-OkA" secondAttribute="bottom" id="JCQ-H6-OLj"/>
+                            <constraint firstItem="Ffx-WA-JOa" firstAttribute="top" secondItem="UCe-BS-OkA" secondAttribute="top" id="YHS-Wu-QjN"/>
+                            <constraint firstItem="Ffx-WA-JOa" firstAttribute="leading" secondItem="UCe-BS-OkA" secondAttribute="leading" id="a02-xZ-kb9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="UCe-BS-OkA"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Выбор языка перевода" id="YnG-Oi-8nu">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="wIH-3D-MDJ">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="done:" destination="Hee-Fb-tjq" id="RBU-3g-6Dh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="Ffx-WA-JOa" id="L8h-9j-3Sl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ram-pS-u6y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-234" y="8"/>
+        </scene>
+    </scenes>
+</document>
