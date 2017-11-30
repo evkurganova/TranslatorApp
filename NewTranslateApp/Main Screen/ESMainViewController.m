@@ -41,6 +41,9 @@
     [self reloadButton];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadButton) name:kNotificationCurrentLanguageChanged object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHide:) name:UIKeyboardDidHideNotification object:nil];
+
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -131,6 +134,19 @@
     [self.navigationController presentViewController:[ESRouter languagesPicker] animated:YES completion:nil];
 }
 
+
+- (void)keyboardDidShow:(NSNotification *)notification {
+    
+    CGSize kbSize = [[[notification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
+
+    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, kbSize.height, 0);
+}
+
+- (void)keyboardDidHide:(NSNotification *)notification {
+    
+    self.tableView.contentInset = UIEdgeInsetsZero;
+}
+
 #pragma mark - Delegates
 #pragma mark <UITableViewDataSource>
 
@@ -210,6 +226,11 @@
     return YES;
 }
 
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
+    
+    [self.view endEditing:YES];
+    return YES;
+}
 
 #pragma mark - <UISearchBarDelegate>
 
