@@ -19,12 +19,12 @@
 @property (nullable, nonatomic, strong) NSString *translatedWord;
 @property (nullable, nonatomic, strong) Language *language;
 
-+ (void)createWord:(NSString *)nativeWord completion:(void(^)(BOOL success, NSError *error))completion;
-+ (void)saveWord:(NSString *)nativeWord fromDictionary:(NSDictionary *)dictionary completion:(void(^)(BOOL success, NSError *error))completion;
-+ (void)deleteWord:(Word *)word completion:(void(^)(BOOL success, NSError *error))completion;
++ (void)createWord:(NSString *_Nonnull)nativeWord completion:(void(^_Nullable)(BOOL success, NSError * _Nullable error))completion;
++ (void)saveWord:(NSString *_Nonnull)nativeWord fromDictionary:(NSDictionary *_Nonnull)dictionary completion:(void(^_Nullable)(BOOL success, NSError * _Nullable error))completion;
++ (void)deleteWord:(Word *_Nonnull)word completion:(void(^_Nullable)(BOOL success, NSError *_Nullable error))completion;
 
-+ (NSArray<Word *> *)allWords;
-+ (NSArray<Word *> *)allWordsWithPredicate:(NSPredicate *)predicate;
++ (NSArray<Word *> *_Nullable)allWords;
++ (NSArray<Word *> *_Nullable)allWordsWithPredicate:(NSPredicate *_Nullable)predicate;
 
 @end
 
