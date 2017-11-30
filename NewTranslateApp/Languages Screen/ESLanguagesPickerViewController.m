@@ -8,7 +8,6 @@
 
 #import "ESLanguagesPickerViewController.h"
 #import "Language.h"
-#import "ESDataManager.h"
 #import "ESTranslationManager.h"
 
 @interface ESLanguagesPickerViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -38,7 +37,6 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.backgroundColor = [UIColor whiteColor];
-//    [self.tableView setTranslatesAutoresizingMaskIntoConstraints:NO];
     
     [self addRefreshControl];
 }
@@ -59,7 +57,7 @@
     
     if (!self.dataArray) {
         
-        self.dataArray = [ESDataManager allLanguages];
+        self.dataArray = [Language allLanguages];
     }
     [self loadData];
 }
@@ -76,7 +74,18 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             [weakSelf.refreshControl endRefreshing];
         });
-        weakSelf.dataArray = [ESDataManager allLanguages];
+        
+        if (success) {
+            
+            weakSelf.dataArray = [Language allLanguages];
+
+        } else if (error) {
+            
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:error.localizedDescription message:nil preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction * okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil];
+            [alertController addAction:okAction];
+            [self.navigationController presentViewController:alertController animated:YES completion:nil];
+        }
     }];
 }
 
@@ -143,7 +152,7 @@
     Language *lang = self.dataArray[indexPath.row];
     
     __weak typeof(self) weakSelf = self;
-    [ESDataManager setCurrentLanguage:lang completion:^(BOOL success, NSError *error) {
+    [Language setCurrentLanguage:lang completion:^(BOOL success, NSError *error) {
         [weakSelf.tableView reloadData];
     }];
 }

@@ -12,11 +12,21 @@
 
 @class Word;
 
+static NSString * const kNotificationCurrentLanguageChanged = @"kNotificationCurrentLanguageChanged";
+
 @interface Language : NSManagedObject
 
 @property (nullable, nonatomic, strong) NSString *languageID;
 @property (nullable, nonatomic, strong) NSString *name;
 @property (nullable, nonatomic, strong) NSNumber *isCurrent;
 @property (nullable, nonatomic, strong) NSSet<Word*> *words;
+
++ (void)saveLanguagesFromDictionary:(NSDictionary *)dictionary completion:(void(^)(BOOL success, NSError *error))completion;
+
++ (Language *)currentLanguage;
++ (Language *)currentLanguageInContext:(NSManagedObjectContext *)context;
++ (void)setCurrentLanguage:(Language *)language completion:(void(^)(BOOL success, NSError *error))completion;
+
++ (NSArray<Language *> *)allLanguages;
 
 @end

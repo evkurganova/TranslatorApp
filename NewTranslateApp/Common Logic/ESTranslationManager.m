@@ -9,7 +9,6 @@
 #import "ESTranslationManager.h"
 #import "Word.h"
 #import "Language.h"
-#import "ESDataManager.h"
 
 const NSString *kYandexApiKey = @"trnsl.1.1.20150314T143415Z.27b846e36cc8cc1b.68a816b75ece8c9412a0e83d2f07d689f13426c9";
 const NSString *kYandexBaseUrl = @"https://translate.yandex.net/api/v1.5/tr.json/";
@@ -62,7 +61,7 @@ static ESTranslationManager *shared;
             
             if (detected && [detected isKindOfClass:[NSDictionary class]]) {
                 
-                [ESDataManager saveWord:nativeWord fromDictionary:response completion:completion];
+                [Word saveWord:nativeWord fromDictionary:response completion:completion];
                 
             } else {
                 
@@ -102,7 +101,7 @@ static ESTranslationManager *shared;
 
             if (languages && [languages isKindOfClass:[NSDictionary class]]) {
                 
-                [ESDataManager saveLanguagesFromDictionary:languages completion:completion];
+                [Language saveLanguagesFromDictionary:languages completion:completion];
                 
             } else {
                 

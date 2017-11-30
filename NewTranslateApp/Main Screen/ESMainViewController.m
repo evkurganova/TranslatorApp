@@ -11,9 +11,8 @@
 #import "ESTranslationManager.h"
 #import "Word.h"
 #import "Language.h"
-#import "ESDataManager.h"
 
-@interface ESMainViewController () <UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface ESMainViewController () <UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UITextField *textField;
@@ -35,11 +34,20 @@
     [self setupObjects];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
+- (void)viewDidAppear:(BOOL)animated {
     
-    [super viewWillAppear:animated];
+    [super viewDidAppear:animated];
     
-    self.pickerBarButton.title = [ESDataManager currentLanguage].name;
+    [self reloadButton];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadButton) name:kNotificationCurrentLanguageChanged object:nil];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    
+    [super viewDidDisappear:animated];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark - Actions
@@ -49,9 +57,10 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.backgroundColor = [UIColor whiteColor];
-    [self.tableView setTranslatesAutoresizingMaskIntoConstraints:NO];
-    
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+
     self.textField.delegate = self;
+    self.searchBar.delegate = self;
 }
 
 - (void)setupObjects {
@@ -64,7 +73,16 @@
 
 - (void)loadData {
     
-    self.dataArray = [ESDataManager allWords];
+    // в поисковой строке что-нибудь введено?
+    if (self.searchBar.text && ![self.searchBar.text isEqualToString:@""]) {
+        
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self.nativeWord contains[c] %@ OR self.translatedWord contains[c] %@", self.searchBar.text, self.searchBar.text];
+        self.dataArray = [Word allWordsWithPredicate:predicate];
+        
+    } else {
+        
+        self.dataArray = [Word allWords];
+    }
 }
 
 - (void)setDataArray:(NSArray *)dataArray {
@@ -73,18 +91,38 @@
     [self.tableView reloadData];
 }
 
+- (void)reloadButton {
+    
+    self.pickerBarButton.title = [Language currentLanguage].name;
+}
+
 - (IBAction)translate:(id)sender {
     
-    if (!self.textField.text) {
+    if (!self.textField.text || [self.textField.text isEqualToString:@""]) {
         return;
     }
     
     [self.textField resignFirstResponder];
     
     __weak typeof(self) weakSelf = self;
-    [ESTranslationManager translationForWord:self.textField.text language:[ESDataManager currentLanguage].languageID completion:^(BOOL success, NSError *error) {
+    [Word createWord:self.textField.text completion:^(BOOL success, NSError *error) {
         
         [weakSelf loadData];
+
+        [ESTranslationManager translationForWord:self.textField.text language:[Language currentLanguage].languageID completion:^(BOOL success, NSError *error) {
+            
+            if (success) {
+                
+                [weakSelf loadData];
+
+            } else if (error) {
+                
+                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:error.localizedDescription message:nil preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction * okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil];
+                [alertController addAction:okAction];
+                [self.navigationController presentViewController:alertController animated:YES completion:nil];
+            }
+        }];
     }];
 }
 
@@ -147,11 +185,10 @@
         Word *word = self.dataArray[indexPath.row];
         
         __weak typeof(self) weakSelf = self;
-        [ESDataManager deleteWord:word completion:^(BOOL success, NSError *error) {
+        [Word deleteWord:word completion:^(BOOL success, NSError *error) {
             
             if (success) {
                 
-                [weakSelf.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
                 [weakSelf loadData];
             }
         }];
@@ -171,6 +208,27 @@
     
     [textField resignFirstResponder];
     return YES;
+}
+
+
+#pragma mark - <UISearchBarDelegate>
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    
+    [self loadData];
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    
+    [searchBar resignFirstResponder];
+    [self loadData];
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    
+    [self.searchBar resignFirstResponder];
+    self.searchBar.text = @"";
+    [self loadData];
 }
 
 @end

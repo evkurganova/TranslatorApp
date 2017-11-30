@@ -21,7 +21,6 @@
 		99B254C91FCF200B0036879A /* LanguagesPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99B254C81FCF200B0036879A /* LanguagesPicker.storyboard */; };
 		99B254CC1FCF20270036879A /* ESLanguagesPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99B254CB1FCF20270036879A /* ESLanguagesPickerViewController.m */; };
 		99B254D01FCF22550036879A /* ESRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 99B254CF1FCF22550036879A /* ESRouter.m */; };
-		99B254D31FCF360E0036879A /* ESDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 99B254D21FCF360E0036879A /* ESDataManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,8 +48,6 @@
 		99B254CB1FCF20270036879A /* ESLanguagesPickerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ESLanguagesPickerViewController.m; sourceTree = "<group>"; };
 		99B254CE1FCF22550036879A /* ESRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESRouter.h; sourceTree = "<group>"; };
 		99B254CF1FCF22550036879A /* ESRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ESRouter.m; sourceTree = "<group>"; };
-		99B254D11FCF360E0036879A /* ESDataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ESDataManager.h; sourceTree = "<group>"; };
-		99B254D21FCF360E0036879A /* ESDataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ESDataManager.m; sourceTree = "<group>"; };
 		9D7832CFA383CEFCDFFE1D1C /* Pods-NewTranslateApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewTranslateApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NewTranslateApp/Pods-NewTranslateApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -148,8 +145,6 @@
 				99B254CF1FCF22550036879A /* ESRouter.m */,
 				99B254A81FCCB5890036879A /* ESTranslationManager.h */,
 				99B254A91FCCB5890036879A /* ESTranslationManager.m */,
-				99B254D11FCF360E0036879A /* ESDataManager.h */,
-				99B254D21FCF360E0036879A /* ESDataManager.m */,
 			);
 			path = "Common Logic";
 			sourceTree = "<group>";
@@ -307,7 +302,6 @@
 				99B2548F1FCAF3E40036879A /* ESAppDelegate.m in Sources */,
 				99B254CC1FCF20270036879A /* ESLanguagesPickerViewController.m in Sources */,
 				99B254C41FCF1B110036879A /* Language.m in Sources */,
-				99B254D31FCF360E0036879A /* ESDataManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

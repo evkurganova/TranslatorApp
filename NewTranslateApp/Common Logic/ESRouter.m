@@ -13,7 +13,7 @@
 + (UIViewController *)languagesPicker
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"LanguagesPicker" bundle:[NSBundle mainBundle]];
-    UIViewController *langPicker = [storyboard instantiateViewControllerWithIdentifier:@"ESLanguagesPickerViewController"];
+    UINavigationController *langPicker = [storyboard instantiateViewControllerWithIdentifier:@"ESLanguagesNavigationViewController"];
     langPicker.modalPresentationStyle = UIModalPresentationFormSheet;
     langPicker.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
     return langPicker;
