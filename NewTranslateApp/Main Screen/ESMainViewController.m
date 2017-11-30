@@ -34,9 +34,9 @@
     [self setupObjects];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated {
     
-    [super viewDidAppear:animated];
+    [super viewWillAppear:animated];
     
     [self reloadButton];
     
@@ -46,9 +46,9 @@
 
 }
 
-- (void)viewDidDisappear:(BOOL)animated {
+- (void)viewWillDisappear:(BOOL)animated {
     
-    [super viewDidDisappear:animated];
+    [super viewWillDisappear:animated];
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
@@ -96,7 +96,7 @@
 
 - (void)reloadButton {
     
-    self.pickerBarButton.title = [Language currentLanguage].name;
+    self.pickerBarButton.title = [NSString stringWithFormat:@"На %@", [Language currentLanguage].name.lowercaseString];
 }
 
 - (IBAction)translate:(id)sender {

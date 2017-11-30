@@ -31,7 +31,7 @@
             </objects>
             <point key="canvasLocation" x="-222" y="55"/>
         </scene>
-        <!--Translate App-->
+        <!--Main View Controller-->
         <scene sceneID="Xgm-yI-gxp">
             <objects>
                 <viewController id="tlv-pQ-B50" customClass="ESMainViewController" sceneMemberID="viewController">
@@ -39,11 +39,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" placeholder="Введите слово для поиска в словаре" translatesAutoresizingMaskIntoConstraints="NO" id="tfg-EH-zDB">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Поиск" translatesAutoresizingMaskIntoConstraints="NO" id="tfg-EH-zDB">
+                                <rect key="frame" x="0.0" y="50" width="375" height="56"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.94099420309066772" green="0.56285268068313599" blue="0.12862521409988403" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="barTintColor" red="0.94099420309066772" green="0.56285268068313599" blue="0.12862521409988403" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <scopeButtonTitles>
                                     <string>Title</string>
@@ -51,9 +50,9 @@
                                 </scopeButtonTitles>
                             </searchBar>
                             <view contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kQi-vh-Mlq">
-                                <rect key="frame" x="0.0" y="56" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="mar-Go-bxS">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="16" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="mar-Go-bxS">
                                         <rect key="frame" x="10" y="10" width="243" height="30"/>
                                         <color key="tintColor" red="0.94099420309066772" green="0.56285268068313599" blue="0.12862521409988403" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="textColor"/>
@@ -62,7 +61,7 @@
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1QC-My-tYV">
                                         <rect key="frame" x="263" y="10" width="102" height="30"/>
-                                        <color key="backgroundColor" red="0.94099420309066772" green="0.56285268068313599" blue="0.12862521409988403" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="102" id="4NN-ag-dXx"/>
                                         </constraints>
@@ -70,7 +69,7 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                         <state key="normal" title="Перевести">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <state key="highlighted">
                                             <color key="titleColor" red="0.77130109069999997" green="0.79318791629999996" blue="0.94663816690000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -80,7 +79,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.94099420309066772" green="0.56285268068313599" blue="0.12862521409988403" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="1QC-My-tYV" firstAttribute="bottom" secondItem="mar-Go-bxS" secondAttribute="bottom" id="1fK-0L-JJH"/>
                                     <constraint firstItem="mar-Go-bxS" firstAttribute="top" secondItem="kQi-vh-Mlq" secondAttribute="top" constant="10" id="1qa-Pg-kLW"/>
@@ -99,20 +98,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Ms6-h6-ajM" firstAttribute="top" secondItem="kQi-vh-Mlq" secondAttribute="bottom" id="2f5-1C-HUx"/>
                             <constraint firstItem="Ms6-h6-ajM" firstAttribute="trailing" secondItem="hX4-iX-1gs" secondAttribute="trailing" id="BRl-fh-cwZ"/>
                             <constraint firstItem="kQi-vh-Mlq" firstAttribute="trailing" secondItem="hX4-iX-1gs" secondAttribute="trailing" id="EQF-4a-Owc"/>
                             <constraint firstItem="Ms6-h6-ajM" firstAttribute="bottom" secondItem="hX4-iX-1gs" secondAttribute="bottom" id="FeL-WS-Jzk"/>
-                            <constraint firstItem="kQi-vh-Mlq" firstAttribute="top" secondItem="tfg-EH-zDB" secondAttribute="bottom" id="KmT-OQ-FX0"/>
+                            <constraint firstItem="Ms6-h6-ajM" firstAttribute="top" secondItem="tfg-EH-zDB" secondAttribute="bottom" id="KmT-OQ-FX0"/>
                             <constraint firstItem="tfg-EH-zDB" firstAttribute="leading" secondItem="hX4-iX-1gs" secondAttribute="leading" id="P3Z-6F-9Dg"/>
-                            <constraint firstItem="tfg-EH-zDB" firstAttribute="top" secondItem="hX4-iX-1gs" secondAttribute="top" id="QCN-A5-5Ku"/>
+                            <constraint firstItem="tfg-EH-zDB" firstAttribute="top" secondItem="kQi-vh-Mlq" secondAttribute="bottom" id="QCN-A5-5Ku"/>
+                            <constraint firstItem="kQi-vh-Mlq" firstAttribute="top" secondItem="hX4-iX-1gs" secondAttribute="top" id="aq2-Nd-xIE"/>
                             <constraint firstItem="tfg-EH-zDB" firstAttribute="trailing" secondItem="hX4-iX-1gs" secondAttribute="trailing" id="awx-gN-Q8y"/>
                             <constraint firstItem="kQi-vh-Mlq" firstAttribute="leading" secondItem="hX4-iX-1gs" secondAttribute="leading" id="gNt-44-M1K"/>
                             <constraint firstItem="Ms6-h6-ajM" firstAttribute="leading" secondItem="hX4-iX-1gs" secondAttribute="leading" id="tID-Bv-0gy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hX4-iX-1gs"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Translate App" id="5QM-8M-e2q">
+                    <navigationItem key="navigationItem" id="5QM-8M-e2q">
                         <barButtonItem key="rightBarButtonItem" title="Языки" id="Cud-KV-3N9">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>

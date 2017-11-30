@@ -33,8 +33,8 @@
                         <viewLayoutGuide key="safeArea" id="UCe-BS-OkA"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Выбор языка перевода" id="YnG-Oi-8nu">
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="wIH-3D-MDJ">
+                    <navigationItem key="navigationItem" title="Перевести на" id="YnG-Oi-8nu">
+                        <barButtonItem key="rightBarButtonItem" title="Готово" style="done" id="wIH-3D-MDJ">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="done:" destination="Hee-Fb-tjq" id="RBU-3g-6Dh"/>
