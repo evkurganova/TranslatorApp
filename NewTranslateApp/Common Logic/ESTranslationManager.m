@@ -50,7 +50,8 @@ static ESTranslationManager *shared;
     //    & [options=<опции перевода>]
     //    & [callback=<имя callback-функции>]
     
-    NSString *url = [NSString stringWithFormat:@"translate?key=%@&text=%@&lang=%@&options=1", kYandexApiKey, [nativeWord stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]], language];
+    NSString *encodeWord =  [[nativeWord stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]] stringByReplacingOccurrencesOfString:@"&" withString:@""];
+    NSString *url = [NSString stringWithFormat:@"translate?key=%@&text=%@&lang=%@&options=1", kYandexApiKey, encodeWord, language];
     
     [[ESTranslationManager shared] GET:url parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
