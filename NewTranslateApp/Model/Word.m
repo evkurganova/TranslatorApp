@@ -86,8 +86,9 @@
     return [Word MR_findAllSortedBy:@"changedDate" ascending:NO];
 }
 
-+ (NSArray<Word *> *)allWordsWithPredicate:(NSPredicate *)predicate {
++ (NSArray<Word *> *)allWordsWithText:(NSString *)searchText {
     
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self.nativeWord contains[c] %@ OR self.translatedWord contains[c] %@", searchText, searchText];
     return [Word MR_findAllSortedBy:@"changedDate" ascending:NO withPredicate:predicate];
 }
 

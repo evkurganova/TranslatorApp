@@ -79,19 +79,14 @@
     // в поисковой строке что-нибудь введено?
     if (self.searchBar.text && ![self.searchBar.text isEqualToString:@""]) {
         
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self.nativeWord contains[c] %@ OR self.translatedWord contains[c] %@", self.searchBar.text, self.searchBar.text];
-        self.dataArray = [Word allWordsWithPredicate:predicate];
+        self.dataArray = [Word allWordsWithText:self.searchBar.text];
+        [self.tableView reloadData];
         
     } else {
         
         self.dataArray = [Word allWords];
+        [self.tableView reloadData];
     }
-}
-
-- (void)setDataArray:(NSArray *)dataArray {
-    
-    _dataArray = dataArray;
-    [self.tableView reloadData];
 }
 
 - (void)reloadButton {

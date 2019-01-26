@@ -57,7 +57,7 @@
         lang.languageID = @"en";
         lang.name = @"Английский";
         lang.isCurrent = @(YES);
-        [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+        [context MR_saveToPersistentStoreAndWait];
         return lang;
     }
 }

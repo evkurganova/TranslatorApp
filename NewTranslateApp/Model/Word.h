@@ -24,7 +24,7 @@
 + (void)deleteWord:(Word *_Nonnull)word completion:(void(^_Nullable)(BOOL success, NSError *_Nullable error))completion;
 
 + (NSArray<Word *> *_Nullable)allWords;
-+ (NSArray<Word *> *_Nullable)allWordsWithPredicate:(NSPredicate *_Nullable)predicate;
++ (NSArray<Word *> *)allWordsWithText:(NSString *)searchText;
 
 @end
 

@@ -41,10 +41,10 @@
     [self addRefreshControl];
 }
 
-- (void)addRefreshControl
-{
-    if (!self.refreshControl)
-    {
+- (void)addRefreshControl {
+    
+    if (!self.refreshControl) {
+        
         self.refreshControl = [[UIRefreshControl alloc] init];
         [self.tableView addSubview:self.refreshControl];
     }
@@ -58,6 +58,7 @@
     if (!self.dataArray) {
         
         self.dataArray = [Language allLanguages];
+        [self.tableView reloadData];
     }
     [self loadData];
 }
@@ -78,6 +79,7 @@
         if (success) {
             
             weakSelf.dataArray = [Language allLanguages];
+            [weakSelf.tableView reloadData];
 
         } else if (error) {
             
@@ -87,12 +89,6 @@
             [self.navigationController presentViewController:alertController animated:YES completion:nil];
         }
     }];
-}
-
-- (void)setDataArray:(NSArray *)dataArray {
-    
-    _dataArray = dataArray;
-    [self.tableView reloadData];
 }
 
 - (void)refreshBooks:(UIRefreshControl *)sender {
