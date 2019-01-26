@@ -1,7 +1,7 @@
-NewTranslateApp — iOS
+TranslatorApp — iOS
 ============
 
-Приложение NewTranslateApp для iOS
+Приложение TranslatorApp для iOS
 
 ### Запуск проекта
 
