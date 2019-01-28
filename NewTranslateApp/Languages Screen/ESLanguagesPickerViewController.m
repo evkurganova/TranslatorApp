@@ -14,7 +14,6 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray *dataArray;
-@property (strong, nonatomic) UIRefreshControl *refreshControl;
 
 @end
 
@@ -37,20 +36,6 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.backgroundColor = [UIColor whiteColor];
-    
-    [self addRefreshControl];
-}
-
-- (void)addRefreshControl {
-    
-    if (!self.refreshControl) {
-        
-        self.refreshControl = [[UIRefreshControl alloc] init];
-        [self.tableView addSubview:self.refreshControl];
-    }
-    [self.refreshControl addTarget:self action:@selector(refreshBooks:) forControlEvents:UIControlEventValueChanged];
-    self.refreshControl.tintColor = [UIColor grayColor];
-    self.refreshControl.layer.zPosition = -1;
 }
 
 - (void)setupObjects {
@@ -65,16 +50,8 @@
 
 - (void)loadData {
     
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.refreshControl beginRefreshing];
-    });
-    
     __weak typeof(self) weakSelf = self;
     [ESTranslationManager languages:^(BOOL success, NSError *error) {
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [weakSelf.refreshControl endRefreshing];
-        });
         
         if (success) {
             
@@ -89,11 +66,6 @@
             [self.navigationController presentViewController:alertController animated:YES completion:nil];
         }
     }];
-}
-
-- (void)refreshBooks:(UIRefreshControl *)sender {
-    
-    [self loadData];
 }
 
 - (IBAction)done:(id)sender {
